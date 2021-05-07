@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info">
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout   pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n" />
+        </Console>
+        <Console name="console_messages" target="SYSTEM_OUT">
+            <PatternLayout   pattern="%msg%n" />
+        </Console>        
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <appender-ref ref="console" />
+        </Root>
+        <Logger name="org.tools.stacka.StackA" level="info" additivity="false">
+            <appender-ref ref="console" level="info" />
+        </Logger> 
+		<Logger name="MESSAGES" level="info" additivity="false">
+            <appender-ref ref="console_messages" level="info" />
+        </Logger>         
+    </Loggers>
+   
+</Configuration>
